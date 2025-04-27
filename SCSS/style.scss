@@ -1,0 +1,254 @@
+$Neutral: hsl(227, 75%, 14%);
+$Neutral800: hsl(226, 25%, 17%);
+$Neutral700: hsl(225, 23%, 24%);
+$Neutral600: hsl(226, 11%, 37%);
+$Neutral300: hsl(0, 0%, 78%);
+$Neutral200: hsl(217, 61%, 90%);
+$Neutral100: hsl(0, 0%, 93%);
+$Neutral0: hsl(200, 60%, 99%);
+
+$Red400: hsl(3, 86%, 64%);
+$Red500: hsl(3, 71%, 56%);
+$Red700: hsl(3, 77%, 44%);
+
+$LightGradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+$DarkGradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+@font-face {
+    font-family: 'Noto';
+    src: url('../assets/fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf') format('truetype');
+    src: url('../assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf') format('truetype');
+    font-weight: 400 600 700;
+}
+*{
+    font-family: 'Noto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: $DarkGradient;
+    transition: background 3s ease-in-out;
+}
+
+main{
+    width: 80%;
+    margin: auto;
+    .navbar{
+        background-color: $Neutral800;
+        padding: .7rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+        div{
+            display: flex;
+            justify-content: space-between;
+            button{
+                cursor: pointer;
+                background: $Neutral700;
+                outline: none;
+                border: none;
+                border-radius: 7px;
+                opacity: .6;
+                transition: .6s;
+                &:hover{
+                    opacity: 1;
+                }
+                img{
+                    padding: 8px 10px;
+                }
+            }
+        }
+    }
+    .list{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+        h1{
+            font-weight: bolder;
+            color: white;
+        }
+        .filter{
+            .filter-button{
+                outline: none;
+                border: none;
+                background-color: $Neutral700;
+                padding: .5rem 1.5rem;
+                margin: 5px;
+                border-radius: 20px;
+                color: white;
+                cursor: pointer;
+            }
+            .active-filter{
+                background-color: $Red400;
+            }
+        }
+    }
+    .extension-container{
+        display: flex;
+        flex-wrap: wrap; /* Allows cards to wrap to the next line */
+        gap: 16px;
+        padding: 16px;
+        .extension{
+            width: 30%;
+            min-width: 350px;
+            flex: 1;
+            position: relative;
+            margin: .5rem;
+            background-color: $Neutral800;
+            padding: 1rem;
+            border-radius: 20px;
+            border: 2px solid $Neutral600;
+            color: white;
+            .extension-title,.extension-icon{
+                display: inline-block;
+                vertical-align: text-top;
+            }
+            .extension-icon{
+                width: 20%;
+            }
+            .extension-title{
+                width: 78%;
+                padding: 0 1rem;
+                p{
+                    font-size: 20px;
+                    font-weight: 300;
+                    margin: 10px 0;
+                    color: $Neutral300;
+                    font-weight: 400;
+                }
+            }
+            .container{
+                display: flex;
+                justify-content: space-between;
+                margin: 1rem 0;
+                .button{
+                    width: 50px;
+                    height: 25px;
+                    border-radius: 15px;
+                    cursor: pointer;
+                    background-color: $Neutral300;
+                    position: relative;
+                    transition: .4s;
+                    &:before{
+                        position: absolute;
+                        content: "";
+                        background-color: $Neutral0;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        margin: 2.5px;
+                        transition: .4s;
+                    }
+                }
+                input:checked + .button{
+                    background-color: $Red500;
+                }
+                input:checked + .button::before{
+                    transform: translateX(25px);
+                }
+                input{
+                    display: none;
+                }
+                .remove{
+                    border: 1px solid $Neutral600;
+                    outline: none;
+                    padding: 10px;
+                    border-radius: 30px;
+                    background-color: $Neutral800;
+                    color: white;
+                    opacity: .7;
+                    transition: .2s;
+                    cursor: pointer;
+                    font-weight: bold;
+                    &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.light-mode{
+    .navbar{
+        background-color: $Neutral0;
+        button{
+            background-color: $Neutral100;
+        }
+    }
+    .list{
+        h1{
+            color: $Neutral;
+        }
+        .filter{
+            .filter-button{
+                background-color: $Neutral0;
+                color: $Neutral
+            }
+            .active-filter{
+                background-color: $Red400;
+            }
+        }
+    }
+    .extension{
+        background-color: $Neutral0 !important;
+        border: 2px solid $Neutral100 !important;
+        .extension-title{
+            h2{
+                color: $Neutral800;
+            }
+            p{
+                color: $Neutral600;
+            }
+        }
+        .container{
+            .button{
+                background-color: $Neutral300;
+                &:before{
+                    background-color: $Neutral0;
+                }
+            }
+            input:checked + .button{
+                background-color: $Red500;
+            }
+            .remove{
+                border: 1px solid $Neutral600;
+                background-color: $Neutral0 !important;
+                color: $Neutral !important;
+            }
+        }
+    }
+}
+.info{
+    min-height: 125px;
+}
+
+
+
+@media (max-width: 768px) {
+    .extension-container{
+        justify-content: center;
+        .extension{
+            min-width: 290px !important;
+        }
+    }
+  }
+
+@media (max-width: 425px){
+    .list{
+        justify-content: center !important;
+    }
+    .extension{
+        .extension-title{
+            p{
+                font-size: 12px !important;
+            }
+        }
+    }
+    .filter-button{
+        padding: 0.5rem 1.2rem !important;
+    }
+}

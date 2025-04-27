@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Browser extension manager UI</title>
+</head>
+<body>
+    <main class="main-content">
+        <header class="navbar">
+            <div>
+                <img src="assets/images/logo.svg" alt="logo" class="logo">
+                <button class="darkmode" onclick="toggleMode()">
+                    <img src="assets/images/icon-sun.svg" alt="light-mode" id="mode-icon">
+                  </button>
+            </div>
+        </header>
+        <div class="content">
+            <div class="list">
+                <h1 id="list-title">Extensions List</h1>
+                <div class="filter">
+                    <button class="filter-button active-filter" data-filter="all">All</button>
+                    <button class="filter-button" data-filter="active">Active</button>
+                    <button class="filter-button" data-filter="inactive">Inactive</button>
+                </div>
+            </div>
+            <div class="extension-container extensions-container" id="extensions-container">
+                <!-- Cards will be inserted here dynamically -->
+            </div>
+        </div>
+    </main>
+    <script src="JS/filter.js"></script>
+    <script src="JS/tooglemode.js"></script>
+</body>
+</html>

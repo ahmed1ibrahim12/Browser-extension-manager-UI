@@ -1,0 +1,220 @@
+@font-face {
+  font-family: "Noto";
+  src: url("../assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf") format("truetype");
+  src: url("../assets/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 400 600 700;
+}
+* {
+  font-family: "Noto", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  transition: background 3s ease-in-out;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+main .navbar {
+  background-color: hsl(226, 25%, 17%);
+  padding: 0.7rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+main .navbar div {
+  display: flex;
+  justify-content: space-between;
+}
+main .navbar div button {
+  cursor: pointer;
+  background: hsl(225, 23%, 24%);
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  opacity: 0.6;
+  transition: 0.6s;
+}
+main .navbar div button:hover {
+  opacity: 1;
+}
+main .navbar div button img {
+  padding: 8px 10px;
+}
+main .list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+main .list h1 {
+  font-weight: bolder;
+  color: white;
+}
+main .list .filter .filter-button {
+  outline: none;
+  border: none;
+  background-color: hsl(225, 23%, 24%);
+  padding: 0.5rem 1.5rem;
+  margin: 5px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+main .list .filter .active-filter {
+  background-color: hsl(3, 86%, 64%);
+}
+main .extension-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  gap: 16px;
+  padding: 16px;
+}
+main .extension-container .extension {
+  width: 30%;
+  min-width: 350px;
+  flex: 1;
+  position: relative;
+  margin: 0.5rem;
+  background-color: hsl(226, 25%, 17%);
+  padding: 1rem;
+  border-radius: 20px;
+  border: 2px solid hsl(226, 11%, 37%);
+  color: white;
+}
+main .extension-container .extension .extension-title, main .extension-container .extension .extension-icon {
+  display: inline-block;
+  vertical-align: text-top;
+}
+main .extension-container .extension .extension-icon {
+  width: 20%;
+}
+main .extension-container .extension .extension-title {
+  width: 78%;
+  padding: 0 1rem;
+}
+main .extension-container .extension .extension-title p {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 10px 0;
+  color: hsl(0, 0%, 78%);
+  font-weight: 400;
+}
+main .extension-container .extension .container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+main .extension-container .extension .container .button {
+  width: 50px;
+  height: 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 78%);
+  position: relative;
+  transition: 0.4s;
+}
+main .extension-container .extension .container .button:before {
+  position: absolute;
+  content: "";
+  background-color: hsl(200, 60%, 99%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 2.5px;
+  transition: 0.4s;
+}
+main .extension-container .extension .container input:checked + .button {
+  background-color: hsl(3, 71%, 56%);
+}
+main .extension-container .extension .container input:checked + .button::before {
+  transform: translateX(25px);
+}
+main .extension-container .extension .container input {
+  display: none;
+}
+main .extension-container .extension .container .remove {
+  border: 1px solid hsl(226, 11%, 37%);
+  outline: none;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: hsl(226, 25%, 17%);
+  color: white;
+  opacity: 0.7;
+  transition: 0.2s;
+  cursor: pointer;
+  font-weight: bold;
+}
+main .extension-container .extension .container .remove:hover {
+  opacity: 1;
+}
+
+.light-mode .navbar {
+  background-color: hsl(200, 60%, 99%);
+}
+.light-mode .navbar button {
+  background-color: hsl(0, 0%, 93%);
+}
+.light-mode .list h1 {
+  color: hsl(227, 75%, 14%);
+}
+.light-mode .list .filter .filter-button {
+  background-color: hsl(200, 60%, 99%);
+  color: hsl(227, 75%, 14%);
+}
+.light-mode .list .filter .active-filter {
+  background-color: hsl(3, 86%, 64%);
+}
+.light-mode .extension {
+  background-color: hsl(200, 60%, 99%) !important;
+  border: 2px solid hsl(0, 0%, 93%) !important;
+}
+.light-mode .extension .extension-title h2 {
+  color: hsl(226, 25%, 17%);
+}
+.light-mode .extension .extension-title p {
+  color: hsl(226, 11%, 37%);
+}
+.light-mode .extension .container .button {
+  background-color: hsl(0, 0%, 78%);
+}
+.light-mode .extension .container .button:before {
+  background-color: hsl(200, 60%, 99%);
+}
+.light-mode .extension .container input:checked + .button {
+  background-color: hsl(3, 71%, 56%);
+}
+.light-mode .extension .container .remove {
+  border: 1px solid hsl(226, 11%, 37%);
+  background-color: hsl(200, 60%, 99%) !important;
+  color: hsl(227, 75%, 14%) !important;
+}
+
+.info {
+  min-height: 125px;
+}
+
+@media (max-width: 768px) {
+  .extension-container {
+    justify-content: center;
+  }
+  .extension-container .extension {
+    min-width: 290px !important;
+  }
+}
+@media (max-width: 425px) {
+  .list {
+    justify-content: center !important;
+  }
+  .extension .extension-title p {
+    font-size: 12px !important;
+  }
+  .filter-button {
+    padding: 0.5rem 1.2rem !important;
+  }
+}/*# sourceMappingURL=style.css.map */
